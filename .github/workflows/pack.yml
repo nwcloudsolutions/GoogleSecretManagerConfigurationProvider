@@ -37,7 +37,7 @@ jobs:
         run: dotnet build --no-restore
 
       - name: Create the package
-        run: dotnet pack --configuration Debug --no-build --no-restore --version-suffix $GITVERSION_SEMVER
+        run: dotnet pack --configuration Debug --no-build --no-restore --version-suffix $GITVERSION_SEMVER -o .
 
       - name: Publish the package
-        run: dotnet nuget push -s https://nuget.nwcloudsolutions.com/v3/index.json -k ${{ secrets.NUGET_API_KEY }}
+        run: dotnet nuget push -s https://nuget.nwcloudsolutions.com/v3/index.json -k ${{ secrets.NUGET_API_KEY }} *.nupkg             
