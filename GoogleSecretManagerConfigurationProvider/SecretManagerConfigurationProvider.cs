@@ -27,7 +27,7 @@ namespace GoogleSecretManagerConfigurationProvider
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1031:Do not catch general exception types", Justification = "N/A")]
         public override void Load()
         {
-            if(string.IsNullOrEmpty(_projectId))
+            if (string.IsNullOrEmpty(_projectId))
             {
                 return; // skip for local debug
             }
